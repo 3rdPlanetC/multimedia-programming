@@ -1,0 +1,3 @@
+http://www.it.kmitl.ac.th/~multipro60/028/multiproject/main_project/index.html		>	test website
+
+3.แก้ขนาด size ของทุกหน้าและ font ให้เล็กลง (ทำเป็น percent) + ทำ responsive

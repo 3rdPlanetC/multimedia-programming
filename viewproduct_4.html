@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<title>View More</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";
+  var a = parseInt(slideIndex);
+  document.getElementById("text").innerHTML = ("Picture " + a);
+}
+</script>
+<style type="text/css">
+    button.w3-button.w3-black.w3-display-right {
+        width: 7%;
+        height: 10%;
+        right: 5%;
+        font-size: 300%;
+        position: fixed;
+    }
+    button.w3-button.w3-black.w3-display-left {
+        width: 7%;
+        height: 10%;
+        left: 5%;
+        font-size: 300%;
+        position: fixed;
+    }
+    .text{
+      position: absolute;
+      bottom: 0;
+      right: 40%;
+      width: 20%;
+      height: 10%;
+      text-align: center;
+      color: white;
+      font-family: 'Special Elite', cursive;
+    }
+    img.mySlides {
+      border-radius: 10%;
+    }
+</style>
+<body style="background-color: #1a0d00;">
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="more_4-1.jpg" style="width:100%">
+  <img class="mySlides" src="more_4-2.jpg" style="width:100%">
+  <img class="mySlides" src="more_4-3.jpg" style="width:100%">
+  <img class="mySlides" src="more_4-4.jpg" style="width:100%">
+</div>
+
+<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+
+<div class="text">
+    <h1 id="text">Picture 1</h1>
+</div>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="camera.ico"/>
+  <script type="text/javascript" src="css-js/style.js"></script>
+	<link rel="stylesheet" type="text/css" href="css-js/style.css"></link>
+  <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+// All Elements Hiding
+    $('#bottom-nav, #intro, #home, #about, #shop, #logo, #logoPage, #tips').hide();
+// Website Loading
+    setTimeout(function() {
+        var number = document.getElementById("number_loading");
+        var word = document.getElementById("word_loading");
+        var width = 1;
+        var set = setInterval(frame, 10);
+        function frame() {
+            if (width >= 100) {
+                word.innerHTML = "FINISHED !!!";
+                clearInterval(set);} 
+            else {
+                width++; 
+                number.innerHTML = width + '%';}
+        }
+    },600);
+// Website Show
+    setTimeout(show_website, 2500)
+    function show_website(){
+        $('#progress_loading').fadeOut(1100);
+        if (window.matchMedia("(max-width: 740px)").matches) {
+            $('#intro, #home, #about, #shop, #tips, #logoPage').fadeIn(2800);}
+        else{
+            $('#intro, #home, #about, #shop, #tips, #logoPage').fadeIn(2800);}
+    }
+// Scroll Page with Nav-bar for each Medias.
+    if (window.matchMedia("(max-width: 720px)").matches) {  //max-width: 720px
+        $(window).scroll(function(event){
+            var scroll = $(window).scrollTop();
+            if (scroll > screen.width) {
+                $('#bottom-nav').fadeIn(300);}
+            else{
+                $('#bottom-nav').fadeOut(300);}
+        });
+        $(window).scroll(function (event) {
+            var scroll = $(window).scrollTop();
+            if (scroll > 146) {
+                $('#logoPage').fadeOut(200);}
+            else {
+                $('#logoPage').fadeIn(200);}
+        });}
+
+    else{
+        $(window).scroll(function (event) {
+            var scroll = $(window).scrollTop();
+            if (scroll > 600) {
+                $('#logoPage').fadeOut(250);
+                $('#logo, #bottom-nav').fadeIn(250);}
+            else {
+                $('#logo, #bottom-nav').fadeOut(250);
+                $('#logoPage').fadeIn(250);}
+        });}
+// Smooth Section Scroll
+    $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000, function() {
+                            var $target = $(target);
+                            $target.focus();
+                            if ($target.is(":focus")) {
+                                return false;} 
+                            else {
+                                $target.attr('tabindex','-1');
+                                $target.focus();};
+                });
+            }
+        }});
+});
+  </script>
+	<title>Secondhand Camera</title>
+</head>
+<body>
+  <!-- Loading Page -->
+    <div id="progress_loading">
+      <h2 id="word_loading">LOADING ...</h2>
+      <h2 id="number_loading">0 %</h2>
+    </div>
+
+  <!-- Logo Bar -->
+    <div id="logo">
+        <a href="#intro"><img src="picture\logo.jpg" alt="logo"></a>
+    </div>
+    <div id="logoPage">
+        <img src="picture\logo.jpg" alt="logo">
+    </div>
+
+  <!-- Bottom Navigator Bar -->
+    <div id="bottom-nav">
+      <!-- Navigator Bar -->
+      <div class="navbar">
+        <div class="home-navbar"><a href="#home"><b>HOME</b></a></div>
+        <div class="about-navbar"><a href="#about"><b>ABOUT</b></a></div>
+        <div class="shop-navbar"><a href="#shop"><b>SHOP</b></a></div>
+        <div class="tips-navbar"><a href="#tips"><b>TIPS</b></a></div>
+      </div>
+      <!-- Contact Zone -->
+  	  <div class="contact-box">
+        <!-- Contact Icon -->
+        <div id="contact-icon">
+            <!-- Phone Icon -->
+            <div id="pic-icon1" onclick="phoneIcon()">
+                <div id="pic-phone">
+                    <img src="picture\phone.png" alt="phone"></div>
+
+                <div class="popup" id="myPopup">
+                    <p>012-345-6789</p></div></div>
+            <!-- E-Mail Icon -->
+            <div id="pic-icon2">
+                <div id="pic-mail">
+                    <a href="https://accounts.google.com" target="_blank"><img src="picture\mail.png" alt="mail"></a></div></div>
+            <!-- Website Icon -->
+            <div id="pic-icon3">
+                <div id="pic-website">
+                    <a href="http://www.it.kmitl.ac.th/~multipro60/028/multiproject/main_project/index.html" target="_blank"><img src="picture\internet.png" alt="internet"></a></div></div>
+            <!-- Facebook Icon -->
+            <div id="pic-icon4">
+                <div id="pic-facebook">
+                    <a href="https://www.facebook.com/phumipat.paisantham" target="_blank"><img src="picture\facebook.png" alt="facebook"></a>
+                </div>
+            </div><br><br>
+            <!-- Twitter Icon -->
+            <div id="pic-icon5">
+                <div id="pic-twitter">
+                    <a href="https://twitter.com" target="_blank"><img src="picture\twitter.png" alt="twitter"></a></div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+  <!-- Intro Page -->
+    <div id="intro" class="section">
+      <!-- Background Video -->
+      <div class="background">
+          <video loop muted autoplay class="background-video">
+              <source src="video\background-video.mp4" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2"'>
+          </video>
+      </div> 
+    </div>
+
+  <!-- Home Page -->
+    <div id="home" class="section">
+      <!-- Background Image -->
+      <div class="background">
+          <img class="background" src="picture\bg_home.jpg" alt="bg">
+      </div>
+      <!-- Home Text Promote -->
+      <div class="home-text">
+          <div id="home-text-1">
+              <h1>PROMOTIONS</h1>
+          </div>
+          <div id="home-text-2">
+              <p id="p1">ซื้อกล้องฟิล์มจากทางร้านตอนนี้ <br><b>" รับฟรี "</b>ประกันจากทางร้าน 1 ปี</p><p id="p2">ส่วนลด 20%ในครั้งต่อไป!!<br>และพิเศษสุด แถมฟรี</p><br>
+          </div>
+          <div id="home-text-3">
+              <h1><b>'' ฟิล์ม KODAK 200 ''</b></h1>
+          </div>
+          <div id="home-text-4">
+              <p>ตั้งแต่วันนี้ - 14 ธันวาคม นี้เท่านั้น !!</p>
+          </div>
+      </div>
+    </div>
+       
+  <!-- About Page -->
+    <div id="about" class="section">
+      <!-- Background Image -->
+      <div class="background">
+          <img class="background" src="picture\bg_about.jpg" alt="bg">
+      </div>
+      <!-- About Text Promote -->
+      <div class="about-text">
+          <div id="about-text-1">
+              <h1>Nice to meet you.</h1>
+              <h2>ยินดีที่ได้รู้จัก</h2>
+          </div>
+          <div id="about-text-2">
+              <p>บริษัทของเราเริ่มต้นก่อตั้งมาจากความชอบ<br>ส่วนตัวของเพื่อนๆ ที่รักการถ่ายกล้องฟิล์ม<br>จึงรวมตัวกันสร้างร้านของกล้องฟิล์มนี้ขึ้นมา<br>
+              เพราะไม่อยากให้เสน่ห์ของกล้องฟิล์มนั้นหายไป
+               จึงช่วยกันสรรหากล้องฟิล์มที่มีคุณภาพที่ดีและมีสภาพที่ยอดเยี่ยมมาเพื่อทุกๆคน</p>
+          </div>
+          <div id="about-text-3">
+              <p><b>" ตามหาเพื่อนคู่ใจของคุณดูสิ "</b></p>
+              <p>www.secondhandcamera.com</p>
+          </div>
+          <div id="about-text-4">
+              <h1>Choose<br><br>Your<br><br>Friend</h1>
+          </div>
+      </div>
+    </div>
+
+  <!-- Shop Page -->
+    <div id="shop" class="section">
+      <!-- Background Image -->
+      <div class="background">
+          <img class="background" src="picture\bg_shop.jpg" alt="bg">
+      </div>
+      <!-- Box Store Title -->
+      <div class="box-store-title">
+        <div id="box-store-title">
+          <p>Camera Store</p>
+        </div>
+      </div>
+      <!-- Box Store -->
+      <div class="box-store">
+          <!-- Product Popup 1 -->
+          <div class="product-popup-1" id="myPopup1">
+              <!-- Product Popup Photo 1 -->
+              <div id="product-popup-photo-1">
+                  <img src="picture\product_1.jpg" alt="product_1">
+              </div>
+              <!-- Product Popup Content 1-->
+              <div id="product-popup-content-1">
+                <h3>Camera Brand Detail</h3>
+                <p>Name : NIKON FM10</p>
+                <p>Type : Single lens reflex</p>
+                <p>Flim format : 35mm (135)</p>
+                <p>Lens : interchangeable lens, Nikon F-mount</p>
+                <p>Flash : hot shoe only</p>
+                <p>Flash synchronization : 1/125s</p>
+                <p>Shutter speed range : 1s to 1/2000s and bulb</p>
+                <p>Exposure metering : silicon photodiode light meter, TTL metering</p>
+                <p>Metering modes : 60/40 percent centerweighted</p>
+                <p>Focus modes : manual</p>
+                <p>Viewfinder : fixed eye-level pentaprism</p>
+                <p>Battery : S76, A76, 1/3N</p>
+                <p>Dimensions : 139 x 86 x 53 mm</p>
+                <p>Weight : 420g</p>
+                <p>Released : 1995</p>
+                <h3>ภาพบอดี้</h3>
+                <p>สภาพโดยรวมถือว่ามีสภาพสมบูรณ์ มีร่องรอยการใช้งานบ้าง อยู่ในปริมาณที่ไม่มาก ดูได้จากรายละเอียดตำหนิในหัวข้อถัดไป บอดี้สะอาดมีจุดบ้างประปราย มีริ้วรอยขนแมวบ้าง ไม่สังเกตไม่เห็น หนังบอดี้ยังติดแน่น ไม่ร่อน ไม่ลอก ไม่เผยอ ช่องมองภาพใส ไม่มัว มีฝุ่นเล็กน้อย ซึ่งทำความสะอาดได้ไม่ยาก</p>
+                <h3>สภาพเลนส์</h3>
+                <p>เลนส์ใส ไม่มีฝ้า ไม่มีรา ไม่มีรอย ไม่มีคราบ ไม่มีรอยขีดข่วน ไม่มีรอยร้าว มีเพียงแค่ฝุ่นเล็กน้อย</p>
+                <h3>สภาพระบบการทำงาน</h3>
+                <p>ยังทำงาน 100 %</p>
+                <p>-ม่านชัตเตอร์ : ทำงานปกติเสียงแน่น ไม่มีคราบน้ำมันที่เบลด</p>
+                <p>-ระบบวัดแสง : ทำงานปกติ</p>
+                <p>-ตัวนับฟิล์ม : ทำงานปกติ เดินทุกรอบการขึ้นฟิล์ม</p>
+                <p>-ปุ่มชัตเตอร์ : ทำงานปกติ ลื่นไหลดีไม่ติดขัดส่อง</p>
+                <p>-ระบบโฟกัส : ทำงานปกติ วงแหวน ยังหมุนลื่นไหล ไม่ติดขัด</p>
+                <p>-ปุ่มกรอฟิล์ม : ทำงานปกติ</p>
+                <br>
+                <p id="note">*** หมายเหตุ ***<br>รูปสภาพสินค้าเป็นรูปที่แสดงภาพอย่างตรงไปตรงมา ไม่มีการปกปิด เสริม เติมแต่งใดๆ เพื่อให้ใกล้เคียงกับสภาพความเป็นจริงที่สุด เพื่อเป็นข้อมูลให้คุณลูกค้า ได้ตัดสินใจได้อย่างถูกต้อง หากต้องการภาพในมุมไหนเพิ่มเติมสามารถแจ้งทางร้านได้</p>
+              </div> 
+              <!-- Button Close Popup 1 -->
+              <div id="btn_view"><button onclick="window.open('viewproduct_1.html')" class="btn"><b>VIEW MORE</b></button></div>
+              <div id="btn_close"><button onclick="Popup_1();" class="btn"><b>CLOSE<b></button></div>
+          </div>
+
+          <!-- Product Popup 2 -->
+          <div class="product-popup-2" id="myPopup2">
+              <!-- Product Popup Photo 2 -->
+              <div id="product-popup-photo-2">
+                  <img src="picture\product_2.jpg" alt="product_2" width="100%" height="100%">
+              </div>
+              <!-- Product Popup Content 2-->
+              <div id="product-popup-content-2">
+                <h3>Camera Brand Detail</h3>
+                <p>Name : NIKON FE</p>
+                <p>Type : Single lens reflex</p>
+                <p>Flim format : 35mm (135)</p>
+                <p>Lens : interchangeable lens, Nikon F-mount</p>
+                <p>Flash : hot shoe only</p>
+                <p>Flash synchronization : 1/125s</p>
+                <p>Shutter speed range : 1s to 1/4000s and bulb</p>
+                <p>Exposure metering : silicon photodiode light meter, TTL metering</p>
+                <p>Metering modes : 60/40 percent centerweighted</p>
+                <p>Focus modes : manual</p>
+                <p>Viewfinder : fixed eye-level pentaprism</p>
+                <p>Battery : S76, A76, 1/3N</p>
+                <p>Dimensions : 139 x 86 x 53 mm</p>
+                <p>Weight : 420g</p>
+                <p>Released : 1995</p>
+                <h3>ภาพบอดี้</h3>
+                <p>สภาพโดยรวมถือว่ามีสภาพเกือบสมบูรณ์ ซึ่งถูกผ่านการใช้งานมาอย่างหนัก จึงเหลือราคาอย่างน่าตกใจ สภาพมีรอยการใช้งานที่พอสวยงาม เหมาะสำหรับคนที่ชอบเก็บสะสมกล้องแนวนี้อย่างมาก </p>
+                <h3>สภาพเลนส์</h3>
+                <p>เลนส์มีจุดดำ ไม่มีฝ้า ไม่มีรา ไม่มีรอยขีดข่วน ไม่มีรอยร้าวและมีฝุ่นเล็กนร้อย</p>
+                <h3>สภาพระบบการทำงาน</h3>
+                <p>ยังทำงาน 100 %</p>
+                <p>-ม่านชัตเตอร์ : ทำงานปกติเสียงแน่น ไม่มีคราบน้ำมันที่เบลด</p>
+                <p>-ระบบวัดแสง : ทำงานปกติ</p>
+                <p>-ตัวนับฟิล์ม : ทำงานปกติ เดินทุกรอบการขึ้นฟิล์ม</p>
+                <p>-ปุ่มชัตเตอร์ : ทำงานปกติ ลื่นไหลดีไม่ติดขัดส่อง</p>
+                <p>-ระบบโฟกัส : ทำงานปกติ วงแหวน ยังหมุนลื่นไหล ไม่ติดขัด</p>
+                <p>-ปุ่มกรอฟิล์ม : ทำงานปกติ</p>
+                <br>
+                <p id="note">*** หมายเหตุ ***<br>รูปสภาพสินค้าเป็นรูปที่แสดงภาพอย่างตรงไปตรงมา ไม่มีการปกปิด เสริม เติมแต่งใดๆ เพื่อให้ใกล้เคียงกับสภาพความเป็นจริงที่สุด เพื่อเป็นข้อมูลให้คุณลูกค้า ได้ตัดสินใจได้อย่างถูกต้อง หากต้องการภาพในมุมไหนเพิ่มเติมสามารถแจ้งทางร้านได้</p>
+              </div>
+              <!-- Button Close Popup 2 -->
+              <div id="btn_view"><button onclick="window.open('viewproduct_2.html')" class="btn"><b>VIEW MORE</b></button></div>
+              <div id="btn_close"><button onclick="Popup_2();" class="btn"><b>CLOSE<b></button></div>
+          </div>
+
+          <!-- Product Popup 3 -->
+          <div class="product-popup-3" id="myPopup3">
+              <!-- Product Popup Photo 3 -->
+              <div id="product-popup-photo-3">
+                  <img src="picture\product_3.jpg" alt="product_3">
+              </div>
+              <!-- Product Popup Content 3-->
+              <div id="product-popup-content-3">
+                <h3>Camera Brand Detail</h3>
+                <p>Name : ZENIT 12XP</p>
+                <p>Type : Single lens reflex</p>
+                <p>Flim format : 35mm (135)</p>
+                <p>Lens : interchangeable lens, All Nikon F-mount</p>
+                <p>Flash : hot shoe only</p>
+                <p>Flash synchronization : 1/125s</p>
+                <p>Shutter speed range : 1s to 1/2000s and bulb</p>
+                <p>Exposure metering : silicon photodiode light meter, TTL metering</p>
+                <p>Metering modes : 60/40 percent centerweighted</p>
+                <p>Focus modes : manual</p>
+                <p>Viewfinder : fixed eye-level pentaprism</p>
+                <p>Battery : S76, A76, 1/3N</p>
+                <p>Dimensions : 139 x 86 x 53 mm</p>
+                <p>Weight : 420g</p>
+                <p>Released : 1995</p>
+                <h3>ภาพบอดี้</h3>
+                <p>สภาพโดยรวมถือว่ามีสภาพสมบูรณ์ มีร่องรอยการใช้งานบ้าง อยู่ในปริมาณที่ไม่มาก ดูได้จากรายละเอียดตำหนิในหัวข้อถัดไป บอดี้สะอาดมีจุดบ้างประปราย มีริ้วรอยขนแมวบ้าง ไม่สังเกตไม่เห็น หนังบอดี้ยังติดแน่น ไม่ร่อน ไม่ลอก ไม่เผยอ ช่องมองภาพใส ไม่มัว มีฝุ่นเล็กน้อย ซึ่งทำความสะอาดได้ไม่ยาก</p>
+                <h3>สภาพเลนส์</h3>
+                <p>เลนส์ใส ไม่มีฝ้า ไม่มีรา ไม่มีรอย ไม่มีคราบ ไม่มีรอยขีดข่วน ไม่มีรอยร้าว มีเพียงแค่ฝุ่นเล็กน้อย</p>
+                <h3>สภาพระบบการทำงาน</h3>
+                <p>ยังทำงาน 100 %</p>
+                <p>-ม่านชัตเตอร์ : ทำงานปกติเสียงแน่น ไม่มีคราบน้ำมันที่เบลด</p>
+                <p>-ระบบวัดแสง : ทำงานปกติ</p>
+                <p>-ตัวนับฟิล์ม : ทำงานปกติ เดินทุกรอบการขึ้นฟิล์ม</p>
+                <p>-ปุ่มชัตเตอร์ : ทำงานปกติ ลื่นไหลดีไม่ติดขัดส่อง</p>
+                <p>-ระบบโฟกัส : ทำงานปกติ วงแหวน ยังหมุนลื่นไหล ไม่ติดขัด</p>
+                <p>-ปุ่มกรอฟิล์ม : ทำงานปกติ</p>
+                <br>
+                <p id="note">*** หมายเหตุ ***<br>รูปสภาพสินค้าเป็นรูปที่แสดงภาพอย่างตรงไปตรงมา ไม่มีการปกปิด เสริม เติมแต่งใดๆ เพื่อให้ใกล้เคียงกับสภาพความเป็นจริงที่สุด เพื่อเป็นข้อมูลให้คุณลูกค้า ได้ตัดสินใจได้อย่างถูกต้อง หากต้องการภาพในมุมไหนเพิ่มเติมสามารถแจ้งทางร้านได้</p>
+              </div> 
+              <!-- Button Close Popup 3 -->
+              <div id="btn_view"><button onclick="window.open('viewproduct_3.html')" class="btn"><b>VIEW MORE</b></button></div>
+              <div id="btn_close"><button onclick="Popup_3();" class="btn"><b>CLOSE<b></button></div>
+          </div>
+
+          <!-- Product Popup 4 -->
+          <div class="product-popup-4" id="myPopup4">
+              <!-- Product Popup Photo 4 -->
+              <div id="product-popup-photo-4">
+                  <img src="picture\product_4.jpg" alt="product_4">
+              </div>
+              <!-- Product Popup Content 4-->
+              <div id="product-popup-content-4">
+                <h3>Camera Brand Detail</h3>
+                <p>Name L YASHICAFLOX</p>
+                <p>Type : TLR (Twin Lens Reflex)</p>
+                <p>Flim Type : 120</p>
+                <p>Picture size : 6 x 6</p>
+                <p>Viewer Lens : Tri-Lausar 80mm f/3.5</p>
+                <p>Taking Lens : Yashikor 80mm f/3.5</p>
+                <p>Filter Mounts : Bay I</p>
+                <p>Shutter : COPAL (1 - 1/300, B)</p>
+                <p>Exposure Mode : No</p>
+                <p>Focus : Manual Focus</p>
+                <p>Frame Counter : Counter</p>
+                <p>Flash System : PC-Sync</p>
+                <p>Battery : - </p>
+                <p>More : - </p>
+                <h3>ภาพบอดี้</h3>
+                <p>สภาพโดยรวมถือว่ามีสภาพดีมาก สภาพพอสวยงาม เหมาะสำหรับคนที่ชอบเก็บสะสมกล้องแนวนี้อย่างมาก </p>
+                <h3>สภาพเลนส์</h3>
+                <p>เลนส์มีจุดดำ ไม่มีฝ้า ไม่มีรา ไม่มีรอยขีดข่วน ไม่มีรอยร้าวและมีฝุ่นเล็กนร้อย</p>
+                <h3>สภาพระบบการทำงาน</h3>
+                <p>ยังทำงาน 100 %</p>
+                <p>-ม่านชัตเตอร์ : ทำงานปกติเสียงแน่น ไม่มีคราบน้ำมันที่เบลด</p>
+                <p>-ระบบวัดแสง : ทำงานปกติ</p>
+                <p>-ตัวนับฟิล์ม : ทำงานปกติ เดินทุกรอบการขึ้นฟิล์ม</p>
+                <p>-ปุ่มชัตเตอร์ : ทำงานปกติ ลื่นไหลดีไม่ติดขัดส่อง</p>
+                <p>-ระบบโฟกัส : ทำงานปกติ วงแหวน ยังหมุนลื่นไหล ไม่ติดขัด</p>
+                <p>-ปุ่มกรอฟิล์ม : ทำงานปกติ</p>
+                <br>
+                <p id="note">*** หมายเหตุ ***<br>รูปสภาพสินค้าเป็นรูปที่แสดงภาพอย่างตรงไปตรงมา ไม่มีการปกปิด เสริม เติมแต่งใดๆ เพื่อให้ใกล้เคียงกับสภาพความเป็นจริงที่สุด เพื่อเป็นข้อมูลให้คุณลูกค้า ได้ตัดสินใจได้อย่างถูกต้อง หากต้องการภาพในมุมไหนเพิ่มเติมสามารถแจ้งทางร้านได้</p>
+              </div> 
+              <!-- Button Close Popup 4 -->
+              <div id="btn_view"><button onclick="window.open('viewproduct_4.html')" class="btn"><b>VIEW MORE</b></button></div>
+              <div id="btn_close"><button onclick="Popup_4();" class="btn"><b>CLOSE<b></button></div>
+          </div>
+
+          <!-- Product Popup 5 -->
+          <div class="product-popup-5" id="myPopup5">
+              <!-- Product Popup Photo 5 -->
+              <div id="product-popup-photo-5">
+                  <img src="picture\product_5.jpg" alt="product_5">
+              </div>
+              <!-- Product Popup Content 5-->
+              <div id="product-popup-content-5">
+                <h3>Camera Brand Detail</h3>
+              </div> 
+              <!-- Button Close Popup 5 -->
+              <div id="btn_view"><button onclick="window.open('viewproduct_5.html')" class="btn"><b>VIEW MORE</b></button></div>
+              <div id="btn_close"><button onclick="Popup_5();" class="btn"><b>CLOSE<b></button></div>
+          </div>
+
+          <!-- Product Popup 6 -->
+          <div class="product-popup-6" id="myPopup6">
+              <!-- Product Popup Photo 6 -->
+              <div id="product-popup-photo-6">
+                  <img src="picture\product_6.jpg" alt="product_6">
+              </div>
+              <!-- Product Popup Content 6-->
+              <div id="product-popup-content-6">
+                <h3>Camera Brand Detail</h3>
+              </div> 
+              <!-- Button Close Popup 6 -->
+              <div id="btn_view"><button onclick="window.open('viewproduct_6.html')" class="btn"><b>VIEW MORE</b></button></div>
+              <div id="btn_close"><button onclick="Popup_6();" class="btn"><b>CLOSE<b></button></div>
+          </div>
+
+          <!-- Box-product-1 -->
+          <div id="box-product-1" onclick="Popup_1();">
+              <!-- Product Photo 1 -->
+              <div id="product-photo-1">
+                  <img src="picture\product_1.jpg">
+              </div>
+              <!-- Product Name 1 -->
+              <div id="product-name-1">
+                  <h1>NIKON FM10</h1>
+              </div>
+          </div>
+
+          <!-- Box-product-2 -->
+          <div id="box-product-2" onclick="Popup_2();">
+              <!-- Product Photo 2 -->
+              <div id="product-photo-2">
+                  <img src="picture\product_2.jpg">
+              </div>
+              <!-- Product Name 2 -->
+              <div id="product-name-2">
+                  <h1>NIKON FE</h1>
+              </div>
+          </div>
+
+          <!-- box-product-3 -->
+          <div id="box-product-3" onclick="Popup_3();">
+              <!-- Product Photo 3 -->
+              <div id="product-photo-3">
+                  <img src="picture\product_3.jpg">
+              </div>
+              <!-- Product Name 3 -->
+              <div id="product-name-3">
+                  <h1>ZENIT 12XP</h1>
+              </div>
+          </div>
+
+          <!-- box-product-4 -->
+          <div id="box-product-4" onclick="Popup_4();">
+              <!-- Product Photo 4 -->
+              <div id="product-photo-4">
+                  <img src="picture\product_4.jpg">
+              </div>
+              <!-- Product Name 4 -->
+              <div id="product-name-4">
+                  <h1>YASHICAFLOX</h1>
+              </div>
+          </div>
+
+          <!-- Box-product-5 -->
+          <div id="box-product-5" onclick="Popup_5();">
+              <!-- Product Photo 5 -->
+              <div id="product-photo-5">
+                  <img src="">
+              </div>
+              <!-- Product Name 5 -->
+              <div id="product-name-5">
+                  <h1>  Out of Order </h1>
+              </div>
+          </div>
+
+          <!-- Box-product-6 -->
+          <div id="box-product-6" onclick="Popup_6()">
+              <!-- Product Photo 6 -->
+              <div id="product-photo-6">
+                  <img src="">
+              </div>
+              <!-- Product Name 6 -->
+              <div id="product-name-6">
+                  <h1> Out of Order </h1>
+              </div>
+          </div>
+      </div>
+      <!-- Popup Product -->
+    </div>
+
+  <!-- Tips Page -->
+    <div id="tips" class="section">
+      <!-- Background Image -->
+      <div class="background">
+          <img class="background" src="picture\bg_tips.jpg" alt="bg">
+      </div>
+      <!-- tips Text 1-->
+      <div id="tips-text1">
+          <p>" การซื้อกล้องถ่ายรูป  จะต้องเข้าใจถึง Property ของกล้องถ่ายรูปที่สำคัญ ว่ามีอะไรบ้างที่เราจะต้องใช้หลักๆ เพื่อให้การซื้อกล้องถ่ายรูปมีคุณภาพ ราคาถูก และตรงตามต้องการของผู้ที่ต้องการซื้อให้ได้มากที่สุด "</p>
+      </div>
+
+      <!-- tips Text 2-->
+      <div id="tips-text2">
+          <p>" การถ่ายรูป เพื่อที่จะให้ได้ภาพที่คมชัดของรูปภาพ นอกจากจะต้องมีทักษะการถ่ายภาพแล้ว ยังต้องมีความเข้าใจในเรื่องของ Timing และ Focus ของ Shutter อีกด้วยเช่นกัน เพื่อที่จะให้ภาพโฟกัสหรือทำภาพเบลอตามความต้องการ "</p>
+      </div>
+    </div>
+
+</body>
+</html>
