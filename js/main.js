@@ -15,12 +15,13 @@ function mainWebsite() {
                     number.innerHTML = width + '%';}
             }   
         },600);
+        // Website Loading
+        delayShowing();
+        navBarEachMedia();
+        smoothScroll();
     });
 
-    // Website Loading
-    delayShowing();
-    navBarEachMedia();
-    smoothScroll();
+    
 }
 
 // Website Show
