@@ -10,7 +10,7 @@ body{
 
 @font-face{
   font-family: 'supermarket';
-  src: url("fonts/supermarket.ttf");
+  src: url("../fonts/supermarket.ttf");
 }
 
 ::-webkit-scrollbar-track{
